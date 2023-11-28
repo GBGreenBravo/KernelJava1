@@ -1,8 +1,8 @@
 -- 과목 정보 삽입
-INSERT INTO Subject (subject_id, subject_name, grade_type)
+INSERT INTO Subject (subject_name, grade_type)
 VALUES
-    (1, '국어', 1),
-    (2, '수학', 1);
+    ('국어', 1),
+    ('수학', 1);
 
 -- 학생 정보 삽입
 INSERT INTO Student (student_id, student_name, major_subject_id)

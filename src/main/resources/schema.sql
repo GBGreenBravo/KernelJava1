@@ -1,6 +1,6 @@
 -- 과목 테이블 생성
 CREATE TABLE Subject (
-                         subject_id INT PRIMARY KEY NOT NULL,
+                         subject_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
                          subject_name VARCHAR(255) NOT NULL,
                          grade_type INT NOT NULL
 );
