@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Information</title>
+</head>
+
+<body>
+
+<nav>
+    <ul>
+        <li><a href="/subjects">과목 정보</a></li>
+        <li><a href="/students">학생 정보</a></li>
+        <li><a href="/scores?studentName=&subjectName=">성적 정보</a></li>
+    </ul>
+</nav>
+
+<h2>Student Information</h2>
+
+<form action="/student" method="post" th:object="${students}">
+    <label for="studentId">학번:</label>
+    <input type="text" id="studentId" name="studentId" required>
+
+    <label for="studentName">이름:</label>
+    <input type="text" id="studentName" name="studentName" required>
+
+    <label for="majorSubject">중점 과목:</label>
+    <select id="majorSubject" name="majorSubject" required>
+        <option th:each="subject : ${subjects.get()}" th:value="${subject.subjectId}" th:text="${subject.subjectName}"></option>
+    </select>
+
+    <button type="submit">추가</button>
+</form>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>학번</th>
+        <th>이름</th>
+        <th>중점 과목</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="student : ${students.get()}">
+        <td th:text="${student.studentId}"></td>
+        <td th:text="${student.studentName}"></td>
+        <td th:text="${student.majorSubject.subjectName}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+
+</html>

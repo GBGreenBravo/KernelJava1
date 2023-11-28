@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Score Information</title>
+</head>
+
+<body>
+
+<nav>
+    <ul>
+        <li><a href="/subjects">과목 정보</a></li>
+        <li><a href="/students">학생 정보</a></li>
+        <li><a href="/scores?studentName=&subjectName=">성적 정보</a></li>
+    </ul>
+</nav>
+
+<h2>Score Information</h2>
+
+<form action="/score" method="post">
+    <label for="student">학생:</label>
+    <select id="student" name="student" required>
+        <option th:each="student : ${students.get()}" th:value="${student.studentId}" th:text="${student.studentName}"></option>
+    </select>
+
+    <label for="subject">과목:</label>
+    <select id="subject" name="subject" required>
+        <option th:each="subject : ${subjects.get()}" th:value="${subject.subjectId}" th:text="${subject.subjectName}"></option>
+    </select>
+
+    <label for="point">성적:</label>
+    <input type="text" id="point" name="point" required>
+
+    <button type="submit">추가</button>
+</form>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>학생</th>
+        <th>(학생의 중점 과목)</th>
+        <th>과목명</th>
+        <th>과목 성적</th>
+        <th>성적 등급</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="score : ${scores.get()}">
+        <td th:text="${score.getStudent().getStudentName()}"></td>
+        <td th:text="${score.getStudent().getMajorSubject().getSubjectName()}"></td>
+        <td th:text="${score.getSubject().getSubjectName()}"></td>
+        <td th:text="${score.getPoint()}"></td>
+        <td th:text="${score.getGrade()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="/scores" method="get" onsubmit="return validateForm()">
+    <label for="studentName">학생 이름:</label>
+    <select id="studentName" name="studentName">
+        <option></option>
+        <option th:each="student : ${students.get()}" th:value="${student.studentName}" th:text="${student.studentName}"></option>
+    </select>
+
+    <label for="subjectName">과목명:</label>
+    <select id="subjectName" name="subjectName">
+        <option></option>
+        <option th:each="subject : ${subjects.get()}" th:value="${subject.subjectName}" th:text="${subject.subjectName}"></option>
+    </select>
+
+    <button type="submit">조회</button>
+</form>
+
+</body>
+
+<script>
+    function validateForm() {
+        var studentName = document.getElementById('studentName').value;
+        var subjectName = document.getElementById('subjectName').value;
+
+        if ((studentName.length > 0 && subjectName.length > 0) || (studentName.length === 0 && subjectName.length === 0)) {
+            alert('학생 이름 또는 과목명 중 하나만 입력하세요.');
+            return false; // 제출 막기
+        }
+
+        return true; // 제출 허용
+    }
+</script>
+
+</html>

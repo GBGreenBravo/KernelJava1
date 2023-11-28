@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Subject Information</title>
+</head>
+
+<body>
+
+<nav>
+    <ul>
+        <li><a href="/subjects">과목 정보</a></li>
+        <li><a href="/students">학생 정보</a></li>
+        <li><a href="/scores?studentName=&subjectName=">성적 정보</a></li>
+    </ul>
+</nav>
+
+<h2>Subject Information</h2>
+
+<form action="/subject" method="post">
+    <label for="subjectId">과목 코드:</label>
+    <input type="text" id="subjectId" name="subjectId" required>
+
+    <label for="subjectName">과목명:</label>
+    <input type="text" id="subjectName" name="subjectName" required>
+
+    <label for="gradeType">성적 타입:</label>
+    <select id="gradeType" name="gradeType" required>
+        <option th:each="gradeType: ${gradeTypes}" th:value="${gradeType.getTypeCode()}" th:text="${gradeType.getTypeDescription()}"></option>
+    </select>
+
+    <button type="submit">추가</button>
+</form>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>과목 코드</th>
+        <th>과목명</th>
+        <th>성적 타입</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="subject : ${subjects.get()}">
+        <td th:text="${subject.subjectId}"></td>
+        <td th:text="${subject.subjectName}"></td>
+        <td th:text="${subject.gradeType}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+
+</html>
