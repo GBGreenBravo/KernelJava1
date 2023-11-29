@@ -4,11 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Getter
-@Setter
 public class Subject {
 
 	@Id

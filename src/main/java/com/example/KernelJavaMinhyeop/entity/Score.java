@@ -4,10 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Data
-@NoArgsConstructor
 @Entity
 @Getter
-@Setter
 public class Score {
 
 	@Id

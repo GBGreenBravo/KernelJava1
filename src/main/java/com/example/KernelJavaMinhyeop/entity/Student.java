@@ -5,10 +5,7 @@ import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity(name = "Student")
-@EntityListeners(AuditingEntityListener.class)
+@Entity
 @Getter
 public class Student {
 
