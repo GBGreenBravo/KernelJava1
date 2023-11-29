@@ -1,6 +1,6 @@
 package com.example.KernelJavaMinhyeop.controller;
 
-import com.example.KernelJavaMinhyeop.Entity.Score;
+import com.example.KernelJavaMinhyeop.entity.Score;
 import com.example.KernelJavaMinhyeop.service.ScoreService;
 import com.example.KernelJavaMinhyeop.service.StudentService;
 import com.example.KernelJavaMinhyeop.service.SubjectService;

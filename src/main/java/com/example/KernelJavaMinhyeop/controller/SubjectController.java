@@ -1,6 +1,6 @@
 package com.example.KernelJavaMinhyeop.controller;
 
-import com.example.KernelJavaMinhyeop.Entity.Subject;
+import com.example.KernelJavaMinhyeop.entity.Subject;
 import com.example.KernelJavaMinhyeop.service.SubjectService;
 import com.example.KernelJavaMinhyeop.utils.GradeType;
 import org.springframework.stereotype.Controller;

@@ -1,10 +1,8 @@
-package com.example.KernelJavaMinhyeop.Entity;
+package com.example.KernelJavaMinhyeop.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
-import java.util.List;
 
 @Data
 @AllArgsConstructor

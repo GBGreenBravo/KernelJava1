@@ -1,8 +1,7 @@
-package com.example.KernelJavaMinhyeop.Entity;
+package com.example.KernelJavaMinhyeop.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.boot.context.properties.bind.DefaultValue;
 
 @Data
 @NoArgsConstructor

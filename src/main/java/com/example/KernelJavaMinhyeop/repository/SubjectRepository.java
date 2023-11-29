@@ -1,6 +1,6 @@
 package com.example.KernelJavaMinhyeop.repository;
 
-import com.example.KernelJavaMinhyeop.Entity.Subject;
+import com.example.KernelJavaMinhyeop.entity.Subject;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface SubjectRepository extends JpaRepository<Subject, Integer> {

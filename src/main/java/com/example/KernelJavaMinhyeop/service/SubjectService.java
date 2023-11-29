@@ -1,6 +1,6 @@
 package com.example.KernelJavaMinhyeop.service;
 
-import com.example.KernelJavaMinhyeop.Entity.Subject;
+import com.example.KernelJavaMinhyeop.entity.Subject;
 import com.example.KernelJavaMinhyeop.repository.SubjectRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

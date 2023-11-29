@@ -1,8 +1,8 @@
 package com.example.KernelJavaMinhyeop.service;
 
-import com.example.KernelJavaMinhyeop.Entity.Score;
-import com.example.KernelJavaMinhyeop.Entity.Student;
-import com.example.KernelJavaMinhyeop.Entity.Subject;
+import com.example.KernelJavaMinhyeop.entity.Score;
+import com.example.KernelJavaMinhyeop.entity.Student;
+import com.example.KernelJavaMinhyeop.entity.Subject;
 import com.example.KernelJavaMinhyeop.gradeEvaluation.BasicEvaluation;
 import com.example.KernelJavaMinhyeop.gradeEvaluation.GradeEvaluation;
 import com.example.KernelJavaMinhyeop.gradeEvaluation.MajorEvaluation;

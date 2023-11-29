@@ -1,7 +1,7 @@
 package com.example.KernelJavaMinhyeop.service;
 
 import com.example.KernelJavaMinhyeop.repository.StudentRepository;
-import com.example.KernelJavaMinhyeop.Entity.Student;
+import com.example.KernelJavaMinhyeop.entity.Student;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
